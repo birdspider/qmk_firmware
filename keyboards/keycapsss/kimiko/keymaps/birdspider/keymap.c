@@ -29,28 +29,10 @@ enum layers {
 #define RAISE MO(_RAISE)
 #define LOWER MO(_LOWER)
 
+#define KC_SESC LSFT_T(KC_ESC)
 
-#define TD_BRC TD(TD_LBRC_RBRC)
-#define TD_LTGT TD(TD_LT_GT)
-#define TD_CBR TD(TD_LCBR_RCBR)
-#define TD_PRN TD(TD_LPRN_RPRN)
-
-// Tap Dance declarations
-enum {
-    TD_LPRN_RPRN,
-    TD_LBRC_RBRC,
-    TD_LCBR_RCBR,
-    TD_LT_GT,
-};
-
-// Tap Dance definitions
-qk_tap_dance_action_t tap_dance_actions[] = {
-    // Tap once for Escape, twice for Caps Lock
-    [TD_LPRN_RPRN] = ACTION_TAP_DANCE_DOUBLE(KC_LPRN, KC_RPRN), // (( -> )
-    [TD_LBRC_RBRC] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC), // [[ -> ]
-    [TD_LCBR_RCBR] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR), // {{ -> }
-    [TD_LT_GT] = ACTION_TAP_DANCE_DOUBLE(KC_LT, KC_GT) // << -> >
-};
+#define KC_ALENT ALT_T(KC_ENT)
+#define KC_ARBSP ALGR_T(KC_BSPC)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -69,82 +51,35 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
  [_QWERTY] = LAYOUT(
-    KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_GRV,
-    KC_TAB,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINS,
-    KC_LSFT,  KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-    KC_LCTRL, KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,   KC_PAUS, KC_PSCR,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RSFT_T(KC_ENT),
-       LCA_T(KC_ENT), KC_LGUI, LALT_T(KC_DEL),   LOWER,   KC_SPC,  KC_ENT,   RAISE,   KC_BSPC,  KC_RGUI, KC_RALT
+    KC_TAB,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_GRV,
+    KC_TAB,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_GRV,
+    KC_SESC,  KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, RSFT_T(KC_QUOT),
+    KC_LCTRL, KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,   KC_PAUS,  KC_PSCR,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RCTL_T(KC_MINS),
+                    XXXXXXX, XXXXXXX, KC_LGUI,   LOWER,   KC_SPC, KC_ALENT,  RAISE, KC_ARBSP,   XXXXXXX, XXXXXXX
 ),
-
- [_COLEMAKDH] = LAYOUT(
-    _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
-    _______, KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, _______,
-    _______, KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, _______,
-    _______, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    _______, _______,    KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, _______,
-                      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
-),
-/* LOWER
- * ,-------------------------------------------.                    ,-----------------------------------------.
- * |        |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  |  F9  | F10  | F11  |
- * |--------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |   `    |  !   |  @   |  #   |  <>  |  []  |                    |   ]  |   >  |      |      |      | F12  |
- * |--------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |        |      |  +   |  =   |  -   |  ()  |-------.    ,-------|   )  |   1  |   2  |   3  |   4  |   5  |
- * |--------+------+------+------+------+------| MicMut|    | PSCR  |------+------+------+------+------+------|
- * |        |      |      |      |      |  {}  |-------|    |-------|   }  |   6  |   7  |   8  |   9  |   0  |
- * `-------------------------------------------|       /     \      \-----------------------------------------'
- *                 | LCTRL| LGUI | LALT |LOWER| Space /       \Enter \  |RAISE |BackSP| RGUI | RALT |
- *                 `----------------------------------'       '-------------------------------------'
- */
 
 [_LOWER] = LAYOUT(
-    _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10, KC_F11,
-     KC_GRV, KC_EXLM,   KC_AT,  C_HASH, TD_LTGT,  TD_BRC,                   KC_RBRC,   KC_GT, _______, _______, _______,  KC_F12,
-    _______, _______, KC_PLUS,  KC_EQL, KC_MINS,  TD_PRN,                   KC_RPRN,    KC_1,    KC_2,    KC_3,    KC_4,  KC_5,
-    _______, _______, _______, _______, _______,  TD_CBR, _______, _______, KC_RCBR,    KC_6,    KC_7,    KC_8,    KC_9,  KC_0,
-                      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_TILD,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC,   KC_LT,                     KC_GT, KC_RBRC, KC_PLUS, XXXXXXX, KC_HOME, KC_TILD,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_LPRN, KC_PGUP,                   KC_PGDN, KC_RPRN,  KC_EQL, XXXXXXX, KC_END,  KC_DQT,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_LCBR,  KC_INS, _______, _______,  KC_DEL, KC_RCBR, KC_MINS, XXXXXXX, KC_BSLS, KC_UNDS,
+                      _______, _______, _______, XXXXXXX, _______, _______, _______, _______, _______, _______
 ),
-/* RAISE
- * ,-----------------------------------------.                    ,-----------------------------------------.
- * |      |      |      |      |      |      |                    |      |      |      |      |      |COLEMK|
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |   `  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |  {}  |  <>  |  ()  |  []  |-------.    ,-------| Left | Down |  Up  |Right |      |      |
- * |------+------+------+------+------+------| MicMut|    |  PSCR |------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------|    |-------|  DEL |   -  |   =  |   [  |   ]  |   \  |
- * `-----------------------------------------/       /     \      \-----------------------------------------'
- *               | LCTRL| LGUI | LALT |LOWER| Space /       \Enter \  |RAISE |BackSP| RGUI | RALT |
- *               `----------------------------------'       '-------------------------------------'
- */
 
 [_RAISE] = LAYOUT(
-    _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, TG(_COLEMAKDH),
-    _______,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0, _______,
-    _______, _______, TD_CBR, TD_LTGT, TD_PRN, TD_BRC,                      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, KC_DEL , KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
-                      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_TILD,
+    _______,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_TILD,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,  KC_DQT,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PIPE, KC_UNDS,
+                      _______, _______, _______, _______, _______, _______, XXXXXXX, _______, _______, _______
 ),
-/* ADJUST (Press LOWER and RAISE together)
- * ,-----------------------------------------.                    ,-----------------------------------------.
- * |QK_BOOT |    |      |      |      |      |                    |      |      |      |      |      |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |RGB ON| HUE+ | SAT+ | VAL+ |      |      |                    | NEXT | PLAY | VOL+ |      |      |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | MODE | HUE- | SAT- | VAL- |      |      |-------.    ,-------| PREV | MUTE | VOL- |      |      |      |
- * |------+------+------+------+------+------| MicMut|    | PSCR  |------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------|    |-------|      |      |      |      |      |      |
- * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                |LCTRL| LGUI | LALT |LOWER| Space /       \Enter \  |RAISE |BackSP| RGUI | RALT |
- *                `---------------------------------'       '-------------------------------------'
- */
 
 [_ADJUST] = LAYOUT(
-    QK_BOOT, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______,                   KC_MNXT, KC_MUTE, KC_VOLU, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______,                   KC_MPRV, KC_MPLY, KC_VOLD, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-                      _______, _______, _______, _______, _______, _______,  _______, _______, _______, _______
+    XXXXXXX, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______,  KC_F12,
+    XXXXXXX,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F12,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PAUS,                   KC_PSCR, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_F11,
+    QK_BOOT,  QK_RBT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                      _______, _______, _______, XXXXXXX, _______, _______,  XXXXXXX, _______, _______, _______
   )
 };
 
@@ -370,5 +305,5 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [_RAISE] =  { ENCODER_CCW_CW(RGB_VAD, RGB_VAI),           ENCODER_CCW_CW(RGB_SPD, RGB_SPI)  },
     [_ADJUST] = { ENCODER_CCW_CW(RGB_RMOD, RGB_MOD),          ENCODER_CCW_CW(RGB_HUI, RGB_HUD) },
 };
-#endif // ENCODER_MAP_ENABLE 
+#endif // ENCODER_MAP_ENABLE
 
