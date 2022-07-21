@@ -60,9 +60,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_LOWER] = LAYOUT(
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_TILD,
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC,   KC_LT,                     KC_GT, KC_RBRC, KC_PLUS, XXXXXXX, KC_HOME, KC_TILD,
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_LPRN, KC_PGUP,                   KC_PGDN, KC_RPRN,  KC_EQL, XXXXXXX, KC_END,  KC_UNDS,
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_LCBR,  KC_INS, _______, _______,  KC_DEL, KC_RCBR, KC_MINS, XXXXXXX, KC_BSLS,  KC_DQT,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC,   KC_LT,                   XXXXXXX, XXXXXXX, KC_PLUS, XXXXXXX, KC_HOME, KC_TILD,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_LPRN, KC_PGUP,                   KC_PGDN, XXXXXXX,  KC_EQL, XXXXXXX, KC_END,  KC_UNDS,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_LCBR,  KC_INS, _______, _______,  KC_DEL, XXXXXXX, KC_MINS, XXXXXXX, KC_BSLS,  KC_DQT,
                       _______, _______, _______, XXXXXXX, _______, _______, _______, _______, _______, _______
 ),
 
@@ -79,14 +79,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F12,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PAUS,                   KC_PSCR, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_F11,
     QK_BOOT,  QK_RBT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                      _______, _______, _______, XXXXXXX, _______, _______,  XXXXXXX, _______, _______, _______
+                      _______, _______, _______, XXXXXXX, _______, _______, XXXXXXX, _______, _______, _______
   )
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    state = update_tri_layer_state(state, _RAISE, _LOWER, _ADJUST);
-    return state;
+    return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
 }
+
+// shift+<open> => <close>
+const key_override_t shift_LPRN_override = ko_make_basic(MOD_MASK_SHIFT, KC_LPRN, KC_RPRN);
+const key_override_t shift_LBRC_override = ko_make_basic(MOD_MASK_SHIFT, KC_LBRC, KC_RBRC);
+const key_override_t shift_LCBR_override = ko_make_basic(MOD_MASK_SHIFT, KC_LCBR, KC_RCBR);
+const key_override_t shift_LT_override   = ko_make_basic(MOD_MASK_SHIFT, KC_LT, KC_GT);
+
+// This globally defines all key overrides to be used
+const key_override_t **key_overrides = (const key_override_t *[]){
+    &shift_LPRN_override,
+    &shift_LBRC_override,
+    &shift_LCBR_override,
+    &shift_LT_override,
+    NULL // Null terminate the array of overrides!
+};
 
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
