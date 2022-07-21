@@ -53,24 +53,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  [_QWERTY] = LAYOUT(
     KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_GRV,
     KC_ESC,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_GRV,
-    KC_STAB,  KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, RSFT_T(KC_QUOT),
-    KC_LCTRL, KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,   KC_PAUS,  KC_PSCR,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RCTL_T(KC_MINS),
+    KC_STAB,  KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, RSFT_T(KC_MINS),
+    KC_LCTRL, KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,   KC_PAUS,  KC_PSCR,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RCTL_T(KC_QUOT),
                     XXXXXXX, XXXXXXX, KC_LGUI,   LOWER,   KC_SPC, KC_ALENT,  RAISE, KC_ARBSP,   XXXXXXX, XXXXXXX
 ),
 
 [_LOWER] = LAYOUT(
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_TILD,
     _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC,   KC_LT,                     KC_GT, KC_RBRC, KC_PLUS, XXXXXXX, KC_HOME, KC_TILD,
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_LPRN, KC_PGUP,                   KC_PGDN, KC_RPRN,  KC_EQL, XXXXXXX, KC_END,  KC_DQT,
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_LCBR,  KC_INS, _______, _______,  KC_DEL, KC_RCBR, KC_MINS, XXXXXXX, KC_BSLS, KC_UNDS,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_LPRN, KC_PGUP,                   KC_PGDN, KC_RPRN,  KC_EQL, XXXXXXX, KC_END,  KC_UNDS,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_LCBR,  KC_INS, _______, _______,  KC_DEL, KC_RCBR, KC_MINS, XXXXXXX, KC_BSLS,  KC_DQT,
                       _______, _______, _______, XXXXXXX, _______, _______, _______, _______, _______, _______
 ),
 
 [_RAISE] = LAYOUT(
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_TILD,
     _______,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_TILD,
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,  KC_DQT,
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PIPE, KC_UNDS,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, KC_UNDS,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PIPE,  KC_DQT,
                       _______, _______, _______, _______, _______, _______, XXXXXXX, _______, _______, _______
 ),
 
