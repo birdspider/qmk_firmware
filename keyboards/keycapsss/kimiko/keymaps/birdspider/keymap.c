@@ -29,7 +29,6 @@ enum layers {
 #define RAISE MO(_RAISE)
 #define LOWER MO(_LOWER)
 
-#define KC_STAB LSFT_T(KC_TAB)
 #define KC_AESC ALT_T(KC_ESC)
 #define KC_GUIT LGUI_T(KC_TAB)
 
@@ -59,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QWERTY] = LAYOUT(
     KC_AESC,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_GRV,
     KC_AESC,  KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_GRV,
-    KC_STAB,  KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                        KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, RSFT_T(KC_MINS),
+    KC_LSFT,  KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                        KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, RSFT_T(KC_MINS),
     KC_LCTRL, KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,   KC_PAUS,  KC_PSCR,   KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, RCTL_T(KC_QUOT),
                    XXXXXXX, XXXXXXX, KC_GUIT,   LOWER,   KC_SPC,    KC_ENT,  RAISE, KC_BSPC, XXXXXXX, XXXXXXX
 ),
