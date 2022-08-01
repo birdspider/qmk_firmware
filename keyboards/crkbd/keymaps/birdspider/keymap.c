@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_QUERTY] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_AESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, ALGR_T(KC_GRV),
+      KC_AESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_GRV,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_STAB,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, RSFT_T(KC_MINS),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -58,19 +58,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______, KC_EXLM,   KC_AT,  KC_EUR,  KC_DLR, KC_PERC,                        KC_UE, KC_AMPR, KC_ASTR, KC_CIRC,   KC_OE, ALGR_T(KC_TILD),
+      _______,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_TILD,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______,   KC_AE,   KC_SS, KC_LCBR, KC_LPRN,  KC_EQL,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RSFT_T(KC_UNDS),
+      _______,   KC_AE,   KC_SS, KC_LCBR, KC_LPRN,  KC_EQL,                      XXXXXXX, KC_RPRN, KC_RCBR, XXXXXXX,   KC_OE, RSFT_T(KC_UNDS),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, XXXXXXX, XXXXXXX,   KC_LT, KC_LBRC, KC_MINS,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSLS, RCTL_T(KC_DQT),
+      _______, XXXXXXX, XXXXXXX,   KC_LT, KC_LBRC, KC_MINS,                      KC_PLUS, KC_RBRC,   KC_GT, XXXXXXX, KC_BSLS, RCTL_T(KC_DQT),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, XXXXXXX, _______,    _______, _______, _______
-                                      //`--------------------------'  `--------------------------'
+                                      //`--------------------------'  `--------------------------'  
   ),
 
   [_RAISE] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0, ALGR_T(KC_TILD),
+      _______, KC_EXLM,   KC_AT,  KC_EUR,  KC_DLR, KC_PERC,                        KC_UE, KC_AMPR, KC_ASTR, KC_CIRC, XXXXXXX, KC_TILD,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, XXXXXXX, KC_HOME, KC_PGUP, KC_PGDN,  KC_END,                      KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, XXXXXXX, RSFT_T(KC_UNDS),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
