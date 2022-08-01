@@ -30,7 +30,6 @@ enum layers {
 #define LOWER MO(_LOWER)
 
 #define KC_STAB LSFT_T(KC_TAB)
-#define KC_ARBS ALGR_T(KC_BSPC)
 #define KC_AESC ALT_T(KC_ESC)
 #define KC_GUIT LGUI_T(KC_TAB)
 
@@ -58,33 +57,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_QWERTY] = LAYOUT(
-    KC_AESC,  KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0, ALGR_T(KC_GRV),
-    KC_AESC,  KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, ALGR_T(KC_GRV),
+    KC_AESC,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_GRV,
+    KC_AESC,  KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_GRV,
     KC_STAB,  KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                        KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, RSFT_T(KC_MINS),
     KC_LCTRL, KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,   KC_PAUS,  KC_PSCR,   KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, RCTL_T(KC_QUOT),
                    XXXXXXX, XXXXXXX, KC_GUIT,   LOWER,   KC_SPC,    KC_ENT,  RAISE, KC_BSPC, XXXXXXX, XXXXXXX
 ),
 
 [_LOWER] = LAYOUT(
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, ALGR_T(KC_TILD),
-    _______, KC_EXLM,   KC_AT,  KC_EUR,  KC_DLR, KC_PERC,                     KC_UE, KC_AMPR, KC_ASTR, KC_CIRC,   KC_OE, ALGR_T(KC_TILD),
-    _______,   KC_AE,   KC_SS, KC_LCBR, KC_LPRN,  KC_EQL,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RSFT_T(KC_UNDS),
-    _______, XXXXXXX, XXXXXXX,   KC_LT, KC_LBRC, KC_MINS, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSLS, RCTL_T(KC_DQT),
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_TILD,
+    _______,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_TILD,
+    _______,   KC_AE,   KC_SS, KC_LCBR, KC_LPRN,  KC_EQL,                   XXXXXXX, KC_RPRN, KC_RCBR, XXXXXXX,   KC_OE, RSFT_T(KC_UNDS),
+    _______, XXXXXXX, XXXXXXX,   KC_LT, KC_LBRC, KC_MINS, _______, _______, KC_PLUS, KC_RBRC,   KC_GT, XXXXXXX, KC_BSLS, RCTL_T(KC_DQT),
                       _______, _______, _______, XXXXXXX, _______, _______, _______, _______, _______, _______
 ),
 
 [_RAISE] = LAYOUT(
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, ALGR_T(KC_TILD),
-    _______,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0, ALGR_T(KC_TILD),
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_TILD,
+    _______, KC_EXLM,   KC_AT,  KC_EUR,  KC_DLR, KC_PERC,                     KC_UE, KC_AMPR, KC_ASTR, KC_CIRC, XXXXXXX, KC_TILD,
     _______, XXXXXXX, KC_HOME, KC_PGUP, KC_PGDN,  KC_END,                   KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, XXXXXXX, RSFT_T(KC_UNDS),
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_INS, _______, _______,  KC_DEL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  RCTL_T(KC_DQT),
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_INS, _______, _______,  KC_DEL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RCTL_T(KC_DQT),
                       _______, _______, _______, _______, _______, _______, XXXXXXX, _______, _______, _______
 ),
 
 [_ADJUST] = LAYOUT(
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_F12,
-    _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F12,
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PAUS,                   KC_PSCR, KC_VOLU, KC_MUTE, KC_VOLD, XXXXXXX,  KC_F11,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_F12,
+    _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10, KC_F12,
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PAUS,                   KC_PSCR, KC_VOLU, KC_MUTE, KC_VOLD, XXXXXXX, KC_F11,
     QK_BOOT,  QK_RBT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_MNXT, KC_MPLY, KC_MPRV, XXXXXXX, XXXXXXX,
                       _______, _______, _______, XXXXXXX, _______, _______, XXXXXXX, _______, _______, _______
   )
