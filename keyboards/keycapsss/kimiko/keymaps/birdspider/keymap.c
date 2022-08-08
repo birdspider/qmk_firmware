@@ -66,14 +66,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT(
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_TILD,
     _______,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_TILD,
-    _______,   KC_AE,   KC_SS, KC_LCBR, KC_LPRN,  KC_EQL,                   XXXXXXX, KC_RPRN, KC_RCBR, XXXXXXX,   KC_OE, RSFT_T(KC_UNDS),
+    _______,   KC_AE,   KC_SS, KC_LCBR, KC_LPRN,  KC_EQL,                     KC_UE, KC_RPRN, KC_RCBR, XXXXXXX,   KC_OE, RSFT_T(KC_UNDS),
     _______, XXXXXXX, XXXXXXX,   KC_LT, KC_LBRC, KC_MINS, _______, _______, KC_PLUS, KC_RBRC,   KC_GT, XXXXXXX, KC_BSLS, RCTL_T(KC_DQT),
                       _______, _______, _______, XXXXXXX, _______, _______, _______, _______, _______, _______
 ),
 
 [_RAISE] = LAYOUT(
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_TILD,
-    _______, KC_EXLM,   KC_AT,  KC_EUR,  KC_DLR, KC_PERC,                     KC_UE, KC_AMPR, KC_ASTR, KC_CIRC, XXXXXXX, KC_TILD,
+    _______, KC_EXLM,   KC_AT,  KC_EUR,  KC_DLR, KC_PERC,                   KC_CIRC, KC_AMPR, KC_ASTR, XXXXXXX, XXXXXXX, KC_TILD,
     _______, XXXXXXX, KC_HOME, KC_PGUP, KC_PGDN,  KC_END,                   KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, XXXXXXX, RSFT_T(KC_UNDS),
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_INS, _______, _______,  KC_DEL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RCTL_T(KC_DQT),
                       _______, _______, _______, _______, _______, _______, XXXXXXX, _______, _______, _______
