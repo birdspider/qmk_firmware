@@ -58,9 +58,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       _______,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_TILD,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______,   KC_AE,   KC_SS, KC_LCBR, KC_LPRN,  KC_EQL,                        KC_UE, KC_RPRN, KC_RCBR, XXXXXXX,   KC_OE, RSFT_T(KC_UNDS),
+      _______,   KC_AE,   KC_SS, KC_LCBR, KC_LPRN, KC_MINS,                        KC_UE, KC_RPRN, KC_RCBR, XXXXXXX,   KC_OE, RSFT_T(KC_UNDS),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, XXXXXXX, XXXXXXX,   KC_LT, KC_LBRC, KC_MINS,                      KC_PLUS, KC_RBRC,   KC_GT, XXXXXXX, KC_BSLS, RCTL_T(KC_DQT),
+      _______, XXXXXXX, XXXXXXX,   KC_LT, KC_LBRC, KC_PLUS,                       KC_EQL, KC_RBRC,   KC_GT, XXXXXXX, KC_BSLS, RCTL_T(KC_DQT),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, XXXXXXX, _______,    _______, _______, _______
                                       //`--------------------------'  `--------------------------'
@@ -70,9 +70,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       _______, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR,  KC_DLR,  KC_EUR, KC_TILD,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, XXXXXXX, KC_HOME, KC_PGUP, KC_PGDN,  KC_END,                      KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, XXXXXXX, RSFT_T(KC_UNDS),
+      _______, XXXXXXX, XXXXXXX, XXXXXXX,  KC_EQL, KC_MINS,                      KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, XXXXXXX, RSFT_T(KC_UNDS),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_INS,                       KC_DEL, XXXXXXX, XXXXXXX, XXXXXXX, KC_PIPE, RCTL_T(KC_DQT),
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PLUS,                       KC_DEL,  KC_INS, KC_PGUP, KC_PGDN, KC_PIPE, RCTL_T(KC_DQT),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______, _______,    _______, XXXXXXX, _______
                                       //`--------------------------'  `--------------------------'
