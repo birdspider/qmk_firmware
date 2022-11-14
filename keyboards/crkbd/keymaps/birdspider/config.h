@@ -2,4 +2,4 @@
 
 #define MASTER_LEFT
 
-#define TAPPING_TERM 150
+#define TAPPING_TERM 200
