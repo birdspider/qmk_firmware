@@ -81,10 +81,9 @@ const key_override_t shift_LCBR_override = ko_make_basic(MOD_MASK_SHIFT, KC_LCBR
 const key_override_t shift_LT_override   = ko_make_basic(MOD_MASK_SHIFT, KC_LT, KC_GT);
 
 // This globally defines all key overrides to be used
-const key_override_t **key_overrides = (const key_override_t *[]){
+const key_override_t *key_overrides[] = {
     &shift_LPRN_override,
     &shift_LBRC_override,
     &shift_LCBR_override,
-    &shift_LT_override,
-    NULL // Null terminate the array of overrides!
+    &shift_LT_override
 };
